@@ -1,0 +1,81 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Nova editora</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/listarEditoras" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                 Voltar</a>
+            </div>
+          </div>
+        </div>
+        <form #editoraForm="ngForm">
+          <div class="table-content">
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="nome" class="p-t-b-10">Nome<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="nome" required maxlength="255"
+                  [(ngModel)]="criarEditoraForm.nome" name="nome" #nome="ngModel">
+                <div *ngIf="nome.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!nome.errors['required']">
+                    Nome é obrigatório
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="telefone" class="p-t-b-10">Telefone<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="telefone" required maxlength="255"
+                  [(ngModel)]="criarEditoraForm.telefone" name="telefone" #telefone="ngModel">
+                <div *ngIf="telefone.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!telefone.errors['required']">
+                    Telefone é obrigatório
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+            <div class="col-sm-3">
+                <label for="email" class="p-t-b-10">E-mail<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="email" required maxlength="255"
+                [(ngModel)]="criarEditoraForm.email" name="email" #email="ngModel">
+                <div *ngIf="email.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!email.errors['required']">
+                    E-mail é obrigatório
+                </div>
+                </div>
+            </div>
+            </div>            
+            <div class="form-group p-10 row">
+            <div class="col-sm-3">
+                <label for="website" class="p-t-b-10">Website<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="website" required maxlength="255"
+                [(ngModel)]="criarEditoraForm.website" name="website" #website="ngModel">
+                <div *ngIf="website.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!website.errors['required']">
+                    Website é obrigatório
+                </div>
+                </div>
+            </div>
+            </div>              
+
+          </div>
+          <div class="table-footer">
+            <button class="btn btn-success" (click)="criarEditora(editoraForm.form.valid)">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Atualizar autor</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/listarAutores" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                &nbsp;Back</a>
+            </div>
+          </div>
+        </div>
+        <form #autorForm="ngForm">
+            <input type="hidden" class="form-control" id="idAutor" [(ngModel)]="editarAutorForm.idAutor" name="idAutor" />
+          <div class="table-content">
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="FirstName" class="p-t-b-10">Nome<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="FirstName" required maxlength="255"
+                  [(ngModel)]="editarAutorForm.nome" name="FirstName" #FirstName="ngModel">
+                <div *ngIf="FirstName.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!FirstName.errors['required']">
+                    Nome é obrigatório
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">Biografia<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <textarea class="form-control" id="biografia" required [(ngModel)]="editarAutorForm.biografia" name="biografia"
+                  #biografia="ngModel">></textarea>
+                <div *ngIf="biografia.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!biografia.errors['required']">
+                    Biografia é obrigatória
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="nacionalidade" class="p-t-b-10">Nacionalidade<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="nacionalidade" required maxlength="255"
+                    [(ngModel)]="editarAutorForm.nacionalidade" name="nacionalidade" #nacionalidade="ngModel">
+                  <div *ngIf="nacionalidade.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!nacionalidade.errors['required']">
+                      Nacionalidade é obrigatória
+                    </div>
+                  </div>
+                </div>
+              </div>            
+          </div>
+          <div class="table-footer">
+            <button class="btn btn-success" (click)="salvarAutor(autorForm.form.valid)">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Visualizar editora</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/listarEditoras" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i> &nbsp;Voltar</a>
+            </div>
+          </div>
+        </div>       
+        <table class="table table-striped table-hover table-bordered table-content">
+          <tbody>
+            <tr>
+              <td>
+                <label><b>Nome</b></label>
+              </td>
+              <td>
+                <span>{{ detalhesEditora.nome }}</span>              
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <label><b>Telefone</b></label>
+                </td>
+                <td>
+                  <span>{{ detalhesEditora.telefone }}</span>              
+                </td>
+              </tr>              
+            <tr>
+                <td>
+                  <label><b>E-mail</b></label>
+                </td>
+                <td>
+                  <span>{{ detalhesEditora.email }}</span>              
+                </td>
+              </tr>            
+            <tr>
+              <td>
+                <label><b>Website</b></label>
+              </td>
+              <td>
+                <span>{{ detalhesEditora.website }}</span>              
+              </td>
+            </tr>
+
+          </tbody>
+        </table>       
+      </div>
+    </div>
+  </div>
