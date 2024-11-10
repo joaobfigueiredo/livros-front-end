@@ -60,13 +60,11 @@ export class ListarLivrosComponent implements OnInit {
   }
 
   concatenarNomesAutores(livro: any): string {
-    console.log("livro", livro);
     this.autorService.buscarAutoresPorLivro(livro.idLivro).subscribe(
       {
         next: (data:any) =>{
           if(data){
 
-            console.log("fdsafdsa",data);
             livro.autores = data;
             return livro.autores?.map((autor: any) => autor.nome).join(', ') || '';
           } else {

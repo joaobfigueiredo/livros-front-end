@@ -34,7 +34,6 @@ export class AlterarLivroComponent  implements OnInit  {
 
   ngOnInit(): void {
     this.idLivro = this.route.snapshot.params['idLivro'];
-    console.log("ngOnInit",this.idLivro);
     this.obterDetalhesLivroPorId();
     this.carregarEditoras();
     this.carregarAutores();
@@ -92,14 +91,12 @@ export class AlterarLivroComponent  implements OnInit  {
     this.livroService.obterDetalhesLivroPorId(this.idLivro).subscribe({
       next: (livro:any) => {
         if(livro){
-          console.log(livro);
           this.editarLivroForm = {
             ...livro,
             nomesAutores: livro.autores?.map((autor: any) => autor.nome).join(', ') || 'N/A',
             editoraId: livro.editora?.idEditora || null,
             autoresIds: livro.autores ? livro.autores.map((autor: any) => autor.idAutor) : []
           }
-          console.log(this.editarLivroForm);
         }
       },
       error: (error: any) => { }

@@ -25,7 +25,6 @@ export class LivroService {
   }
 
   public criarLivro(model: any): Observable<any> {
-    console.log("livro",model);
     return this.httpClient.post(`${this.apiUrl}/livros`, model);
   }   
 
