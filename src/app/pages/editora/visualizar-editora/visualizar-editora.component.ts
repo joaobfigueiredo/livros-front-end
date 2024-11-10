@@ -23,6 +23,7 @@ export class VisualizarEditoraComponent implements OnInit{
     this.editoraService.obterDetalhesEditoraPorId(this.idEditora).subscribe(
       (data:any) => {
         if(data){
+          console.log('editora',data);
           this.detalhesEditora = data;
         }
       },

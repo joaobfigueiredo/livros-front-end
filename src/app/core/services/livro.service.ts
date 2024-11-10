@@ -17,6 +17,15 @@ export class LivroService {
   ) { }
 
   listar() : Observable<Livro[]>{
-    return this.httpClient.get<Livro[]>(`${this.apiUrl}/autores`);
+    return this.httpClient.get<Livro[]>(`${this.apiUrl}/livros`);
   }
+
+  public criarLivro(model: any): Observable<any> {
+    console.log("livro",model);
+    return this.httpClient.post(`${this.apiUrl}/livros`, model);
+  }   
+
+  public excluirLivroPorId(idLivro: any): Observable<any> {
+    return this.httpClient.delete(`${this.apiUrl}/livros/${idLivro}`);
+  }   
 }

@@ -50,7 +50,7 @@ export class ListarAutoresComponent implements OnInit {
   listarAutores(){
     this.autorService.listar().subscribe(
       dados => {
-          this.listaDeAutores =dados;
+          this.listaDeAutores = dados;
       })
   }
 

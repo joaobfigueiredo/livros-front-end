@@ -31,6 +31,7 @@ import { ListarEditorasComponent } from './pages/editora/listar-editoras/listar-
 import { ListarLivrosComponent } from './pages/livro/listar-livros/listar-livros.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ToastrModule } from 'ngx-toastr';
     VisualizarAutorComponent,
     ListarAutoresComponent,
     ListarEditorasComponent,
-    ListarLivrosComponent
+    ListarLivrosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

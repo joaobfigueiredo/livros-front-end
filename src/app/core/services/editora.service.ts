@@ -24,7 +24,6 @@ export class EditoraService {
   }   
 
   public salvarEditora(model: any): Observable<any> {
-    console.log("editora",model);
     return this.httpClient.put(`${this.apiUrl}/editoras/${model.idEditora}`, model);
   }   
 
