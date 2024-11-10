@@ -9,7 +9,7 @@ import { AutorService } from 'src/app/core/services/autor.service';
   templateUrl: './criar-autor.component.html',
   styleUrls: ['./criar-autor.component.scss']
 })
-export class CriarAutorComponent implements OnInit{
+export class CriarAutorComponent {
 
   criarAutorForm: AutorForm = new AutorForm();
 
@@ -18,9 +18,6 @@ export class CriarAutorComponent implements OnInit{
   isSubmitted: boolean = false;
 
   constructor(private router: Router,  private autorService: AutorService, private toastr: ToastrService) { }
-  
-  ngOnInit(): void {
-  }
 
   criarAutor(isValid: any){
     this.isSubmitted = true;
@@ -47,8 +44,6 @@ export class CriarAutorComponent implements OnInit{
 
   }
 
-
-  
 }
 
 export class AutorForm {

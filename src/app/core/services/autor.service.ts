@@ -35,4 +35,8 @@ export class AutorService {
   public excluirAutorPorId(idAutor: any): Observable<any> {
     return this.httpClient.delete(`${this.apiUrl}/autores/${idAutor}`);
   }   
+
+  public buscarAutoresPorLivro(idLivro: any) : Observable<Autor[]>{
+    return this.httpClient.get<Autor[]>(`${this.apiUrl}/autores/livro/${idLivro}`);
+  }  
 }

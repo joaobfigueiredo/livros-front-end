@@ -1,1 +1,61 @@
-<p>visualizar-livro works!</p>
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Visualizar livro</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/listarLivros" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i> &nbsp;Voltar</a>
+            </div>
+          </div>
+        </div>       
+        <table class="table table-striped table-hover table-bordered table-content">
+          <tbody>
+            <tr>
+              <td>
+                <label><b>Título</b></label>
+              </td>
+              <td>
+                <span>{{ detalhesLivro.titulo }}</span>              
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <label><b>Ano de publicação</b></label>
+                </td>
+                <td>
+                  <span>{{ detalhesLivro.anoPublicacao }}</span>              
+                </td>
+              </tr>             
+            <tr>
+                <td>
+                  <label><b>Autor(es)</b></label>
+                </td>
+                <td>
+                  <span>{{ detalhesLivro.nomesAutores }}</span>              
+                </td>
+              </tr>              
+            <tr>
+                <td>
+                  <label><b>Ano de publicação</b></label>
+                </td>
+                <td>
+                  <span>{{ detalhesLivro.anoPublicacao }}</span>              
+                </td>
+              </tr>            
+            <tr>
+              <td>
+                <label><b>Editora</b></label>
+              </td>
+              <td>
+                <span>{{ detalhesLivro.editora?.nome }}</span>              
+              </td>
+            </tr>
+
+          </tbody>
+        </table>       
+      </div>
+    </div>
+  </div>

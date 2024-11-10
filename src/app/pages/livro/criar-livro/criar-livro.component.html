@@ -1,1 +1,98 @@
-<p>criar-livro works!</p>
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Novo livro</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/listarLivros" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                 Voltar</a>
+            </div>
+          </div>
+        </div>
+        <form #livroForm="ngForm">
+          <div class="table-content">
+
+            <!-- Título -->
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="titulo" class="p-t-b-10">Título<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="titulo" required maxlength="255"
+                  [(ngModel)]="criarLivroForm.titulo" name="titulo" #titulo="ngModel">
+                <div *ngIf="titulo.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!titulo.errors['required']">
+                    Título é obrigatório
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Ano de Publicação -->
+            <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label for="anoPublicacao" class="p-t-b-10">Ano de Publicação<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" id="anoPublicacao" required 
+                    [(ngModel)]="criarLivroForm.anoPublicacao" name="anoPublicacao" #anoPublicacao="ngModel">
+                  <div *ngIf="anoPublicacao.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!anoPublicacao.errors['required']">
+                      Ano de Publicação é obrigatório
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              
+            <!-- Gênero -->
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="genero" class="p-t-b-10">Gênero<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="genero" required maxlength="255"
+                  [(ngModel)]="criarLivroForm.genero" name="genero" #genero="ngModel">
+                <div *ngIf="genero.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!genero.errors['required']">
+                    Gênero é obrigatório
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- Editora -->
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="editora" class="p-t-b-10">Editora<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <select class="form-control" id="editora" required [(ngModel)]="criarLivroForm.editoraId" name="editoraId">
+                <option *ngFor="let editora of editoras" [value]="editora.idEditora">{{ editora.nome }}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Autores -->
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="autores" class="p-t-b-10">Autores<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <select class="form-control" id="autores" required multiple [(ngModel)]="criarLivroForm.autoresIds" name="autoresIds">
+                <option *ngFor="let autor of autores" [value]="autor.idAutor">{{ autor.nome }}</option>
+              </select>
+            </div>
+          </div>            
+
+          </div>
+          <div class="table-footer">
+            <button class="btn btn-success" (click)="criarLivro(livroForm.form.valid)">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
