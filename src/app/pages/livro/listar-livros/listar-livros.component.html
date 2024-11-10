@@ -28,11 +28,11 @@
               <td>{{ livro.titulo }}</td>
               <td>{{ livro.anoPublicacao }}</td>
               <td>{{ livro.genero }}</td>
-              <td>{{ concatenarNomesAutores(livro) }}</td>
+              <td>{{ livro.nomesAutores }}</td>
               <td>{{ livro.editora?.nome }}</td>
               <td>
-                <a href="#" [routerLink]="['/ViewEmployee/', livro.id]" class="btn"><i class='fas fa-eye view'></i></a>
-                <a href="#" [routerLink]="['/EditEmployee/', livro.id]" class="btn"><i class="fa fa-edit edit"></i></a>
+                <a href="#" [routerLink]="['/visualizarLivro/', livro.idLivro]" class="btn"><i class='fas fa-eye view'></i></a>
+                <a href="#" [routerLink]="['/alterarLivro/', livro.idLivro]" class="btn"><i class="fa fa-edit edit"></i></a>
                 <button type="button" (click)="confirmacaoAoExcluirLivro(livro)" class="btn"><i class='fas fa-trash-alt delete'></i></button>
               </td>
             </tr>

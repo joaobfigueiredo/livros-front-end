@@ -16,13 +16,21 @@ export class LivroService {
     private httpClient: HttpClient
   ) { }
 
-  listar() : Observable<Livro[]>{
+  public listar() : Observable<Livro[]>{
     return this.httpClient.get<Livro[]>(`${this.apiUrl}/livros`);
+  }
+
+  public obterDetalhesLivroPorId(idLivro:string) : Observable<Livro[]>{
+    return this.httpClient.get<Livro[]>(`${this.apiUrl}/livros/${idLivro}`);
   }
 
   public criarLivro(model: any): Observable<any> {
     console.log("livro",model);
     return this.httpClient.post(`${this.apiUrl}/livros`, model);
+  }   
+
+  public salvarLivro(model: any): Observable<any> {
+    return this.httpClient.put(`${this.apiUrl}/livros/${model.idLivro}`, model);
   }   
 
   public excluirLivroPorId(idLivro: any): Observable<any> {

@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AutorService } from 'src/app/core/services/autor.service';
 
 @Component({
-  selector: 'ng-modal-confirm',
+  selector: 'ng-modal-confirma-autor',
   template: `
   <div class="modal-header">
     <h5 class="modal-title" id="modal-title">Confirmar exclusão</h5>

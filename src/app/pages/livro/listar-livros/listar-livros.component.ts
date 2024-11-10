@@ -6,7 +6,7 @@ import { AutorService } from 'src/app/core/services/autor.service';
 import { LivroService } from 'src/app/core/services/livro.service';
 
 @Component({
-  selector: 'ng-modal-confirm',
+  selector: 'ng-modal-confirma-livro',
   template: `
   <div class="modal-header">
     <h5 class="modal-title" id="modal-title">Confirmar exclusão</h5>
@@ -51,9 +51,12 @@ export class ListarLivrosComponent implements OnInit {
   listarLivros(){
 
 
-      this.livroService.listar().subscribe({next:(livros) => {
-        this.listaDeLivros = livros;
-      }});      
+    this.livroService.listar().subscribe((livros) => {
+      this.listaDeLivros = livros.map(livro => ({
+        ...livro,
+        nomesAutores: livro.autores?.map((autor: any) => autor.nome).join(', ') || 'N/A'
+      }));
+    });  
   }
 
   concatenarNomesAutores(livro: any): string {

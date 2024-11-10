@@ -82,16 +82,14 @@ export class CriarLivroComponent implements OnInit {
 
   }
 
-
 }
 
 export class LivroForm {
   titulo: string = "";
   anoPublicacao: Number = 0;
   genero: string = "";
-  editoraId: string = "";  // ID da editora selecionada
-  autoresIds: string[] = [];  // IDs dos autores selecionados  
+  editoraId: string = "";
+  autoresIds: string[] = [];
   editora: any = [];
   autores: any[] = [];
-  
 }
