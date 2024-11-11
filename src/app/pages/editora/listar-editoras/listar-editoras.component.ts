@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { EditoraService } from 'src/app/core/services/editora.service';
 
 @Component({
-  selector: 'ng-modal-confirm',
+  selector: 'ng-modal-confirma-editora',
   template: `
   <div class="modal-header">
     <h5 class="modal-title" id="modal-title">Confirmar exclusão</h5>
