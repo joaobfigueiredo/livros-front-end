@@ -19,7 +19,7 @@
               <th>Título</th>
               <th>Ano de publicação</th>
               <th>Genero</th>
-              <th>Autor(es)</th>
+              <th>Autor</th>
               <th>Editora</th>
             </tr>
           </thead>
@@ -28,7 +28,7 @@
               <td>{{ livro.titulo }}</td>
               <td>{{ livro.anoPublicacao }}</td>
               <td>{{ livro.genero }}</td>
-              <td>{{ livro.nomesAutores }}</td>
+              <td>{{ livro.autor?.nome }}</td>
               <td>{{ livro.editora?.nome }}</td>
               <td>
                 <a href="#" [routerLink]="['/visualizarLivro/', livro.idLivro]" class="btn"><i class='fas fa-eye view'></i></a>

@@ -54,11 +54,11 @@ export class CriarLivroComponent implements OnInit {
     if(isValid){
 
       this.criarLivroForm.editora = {
-        idEditora: this.criarLivroForm.editoraId
+        idEditora: this.criarLivroForm.idEditora
       }
-       this.criarLivroForm.autores = this.criarLivroForm.autoresIds.map((idAutor: string) => ({
-          idAutor: idAutor
-      }));
+       this.criarLivroForm.autor = {
+          idAutor: this.criarLivroForm.idAutor
+      };
 
 
       this.livroService.criarLivro(this.criarLivroForm).subscribe({
@@ -88,8 +88,8 @@ export class LivroForm {
   titulo: string = "";
   anoPublicacao: Number = 0;
   genero: string = "";
-  editoraId: string = "";
-  autoresIds: string[] = [];
+  idEditora: string = "";
+  idAutor: string = "";
   editora: any = [];
-  autores: any[] = [];
+  autor: any = [];
 }
