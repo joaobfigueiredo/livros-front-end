@@ -3,5 +3,4 @@ export interface Livro {
     titulo: string
     anoPublicacao: Number
     genero: string
-    autores: any[];
 }
