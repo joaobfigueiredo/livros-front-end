@@ -17,13 +17,13 @@
           <div class="table-content">
             <div class="form-group p-10 row">
               <div class="col-sm-3">
-                <label for="FirstName" class="p-t-b-10">Nome<span class="requiredStar">*</span></label>
+                <label for="nome" class="p-t-b-10">Nome<span class="requiredStar">*</span></label>
               </div>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="FirstName" required maxlength="255"
-                  [(ngModel)]="editarEditoraForm.nome" name="FirstName" #FirstName="ngModel">
-                <div *ngIf="FirstName.errors && isSubmitted" class="alert alert-danger validationError">
-                  <div [hidden]="!FirstName.errors['required']">
+                <input type="text" class="form-control" id="nome" required maxlength="255"
+                  [(ngModel)]="editarEditoraForm.nome" name="nome" #nome="ngModel">
+                <div *ngIf="nome.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!nome.errors['required']">
                     Nome é obrigatório
                   </div>
                 </div>

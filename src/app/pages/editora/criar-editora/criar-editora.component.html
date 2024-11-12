@@ -48,11 +48,15 @@
             </div>
             <div class="col-sm-9">
                 <input type="text" class="form-control" id="email" required maxlength="255"
-                [(ngModel)]="criarEditoraForm.email" name="email" #email="ngModel">
+                [(ngModel)]="criarEditoraForm.email" name="email" #email="ngModel"
+                pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9]{2,3}$">
                 <div *ngIf="email.errors && isSubmitted" class="alert alert-danger validationError">
                 <div [hidden]="!email.errors['required']">
                     E-mail é obrigatório
                 </div>
+                <div [hidden]="!email.errors['touched'] && !email.errors['pattern']">
+                  E-mail está inválido
+                </div>                   
                 </div>
             </div>
             </div>            
