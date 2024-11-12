@@ -1,6 +1,7 @@
 # LivrosFrontend
 
 Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.0.0.
+Observação: para executar o projeto, é necessário ter o Angular na versão sitada acima instalado na máquina.
 
 ## Baixar código e instalar dependencias
 
