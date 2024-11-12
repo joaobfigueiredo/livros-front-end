@@ -2,7 +2,6 @@ import { Component, OnInit, Type } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-import { AutorService } from 'src/app/core/services/autor.service';
 import { LivroService } from 'src/app/core/services/livro.service';
 
 @Component({
@@ -42,7 +41,7 @@ export class ListarLivrosComponent implements OnInit {
   listaDeLivros: any = [];
 
   constructor(private router: Router, private modalService: NgbModal, private toastr: ToastrService, 
-    private livroService: LivroService, private autorService: AutorService ){}
+    private livroService: LivroService ){}
 
   ngOnInit(): void {
     this.listarLivros();
@@ -52,31 +51,9 @@ export class ListarLivrosComponent implements OnInit {
 
 
     this.livroService.listar().subscribe((livros) => {
-      this.listaDeLivros = livros.map(livro => ({
-        ...livro,
-        nomesAutores: livro.autores?.map((autor: any) => autor.nome).join(', ') || 'N/A'
-      }));
+      console.log(livros);
+      this.listaDeLivros = livros
     });  
-  }
-
-  concatenarNomesAutores(livro: any): string {
-    this.autorService.buscarAutoresPorLivro(livro.idLivro).subscribe(
-      {
-        next: (data:any) =>{
-          if(data){
-
-            livro.autores = data;
-            return livro.autores?.map((autor: any) => autor.nome).join(', ') || '';
-          } else {
-            return null;
-          }
-        },
-        error: (erro) =>{ return ""}
-      }
-    )
-
-    return "";
-    
   }
 
   criarLivro() {

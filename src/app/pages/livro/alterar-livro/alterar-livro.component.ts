@@ -59,11 +59,11 @@ export class AlterarLivroComponent  implements OnInit  {
     if(isValid){
 
       this.editarLivroForm.editora = {
-        idEditora: this.editarLivroForm.editoraId
+        idEditora: this.editarLivroForm.idEditora
       }
-       this.editarLivroForm.autores = this.editarLivroForm.autoresIds.map((idAutor: string) => ({
-          idAutor: idAutor
-      }));
+       this.editarLivroForm.autor = {
+          idAutor: this.editarLivroForm.idAutor
+      };
 
       this.livroService.salvarLivro(this.editarLivroForm).subscribe({
         next: async (data) => {
@@ -94,8 +94,8 @@ export class AlterarLivroComponent  implements OnInit  {
           this.editarLivroForm = {
             ...livro,
             nomesAutores: livro.autores?.map((autor: any) => autor.nome).join(', ') || 'N/A',
-            editoraId: livro.editora?.idEditora || null,
-            autoresIds: livro.autores ? livro.autores.map((autor: any) => autor.idAutor) : []
+            idEditora: livro.editora?.idEditora || null,
+            idAutor: livro.autores?.idAutor || null,
           }
         }
       },
@@ -111,8 +111,8 @@ export class LivroForm {
   titulo: string = "";
   anoPublicacao: Number = 0;
   genero: string = "";
-  editoraId: string = "";
-  autoresIds: string[] = [];
+  idEditora: string = "";
+  idAutor: string = "";
   editora: any = [];
-  autores: any[] = [];
+  autor: any = [];
 }

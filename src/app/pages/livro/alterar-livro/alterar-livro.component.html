@@ -70,7 +70,7 @@
               <label for="editora" class="p-t-b-10">Editora<span class="requiredStar">*</span></label>
             </div>
             <div class="col-sm-9">
-              <select class="form-control" id="editora" required [(ngModel)]="editarLivroForm.editoraId" name="editoraId">
+              <select class="form-control" id="editora" required [(ngModel)]="editarLivroForm.idEditora" name="idEditora">
                 <option *ngFor="let editora of editoras" [value]="editora.idEditora">{{ editora.nome }}</option>
               </select>
             </div>
@@ -82,7 +82,7 @@
               <label for="autores" class="p-t-b-10">Autores<span class="requiredStar">*</span></label>
             </div>
             <div class="col-sm-9">
-              <select class="form-control" id="autores" required multiple [(ngModel)]="editarLivroForm.autoresIds" name="autoresIds">
+              <select class="form-control" id="autores" required [(ngModel)]="editarLivroForm.idAutor" name="idAutor">
                 <option *ngFor="let autor of autores" [value]="autor.idAutor">{{ autor.nome }}</option>
               </select>
             </div>
