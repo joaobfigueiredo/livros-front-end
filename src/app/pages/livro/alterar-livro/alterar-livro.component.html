@@ -82,7 +82,7 @@
               <label for="autores" class="p-t-b-10">Autores<span class="requiredStar">*</span></label>
             </div>
             <div class="col-sm-9">
-              <select class="form-control" id="autores" required [(ngModel)]="editarLivroForm.idAutor" name="idAutor">
+              <select class="form-control" id="autor" required [(ngModel)]="editarLivroForm.idAutor" name="idAutor">
                 <option *ngFor="let autor of autores" [value]="autor.idAutor">{{ autor.nome }}</option>
               </select>
             </div>
