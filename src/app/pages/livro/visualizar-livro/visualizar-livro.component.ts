@@ -24,10 +24,7 @@ export class VisualizarLivroComponent implements OnInit {
     this.livroService.obterDetalhesLivroPorId(this.idLivro).subscribe({
       next: (livro:any) => {
         if(livro){
-          this.detalhesLivro = {
-            ...livro,
-            nomesAutores: livro.autores?.map((autor: any) => autor.nome).join(', ') || 'N/A'
-          }
+          this.detalhesLivro = livro;
         }
       },
       error: (error: any) => { }
